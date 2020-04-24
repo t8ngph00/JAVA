@@ -1,0 +1,2 @@
+rootProject.name='lab1_more_ui'
+include ':app'
