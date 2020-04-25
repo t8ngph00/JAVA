@@ -1,0 +1,58 @@
+1.
+Object:  is a combination of data and procedures working on the available data. An object has a state and behavior. Example: A dog has states - color, name, breed as well as behaviors – wagging the tail, barking, eating.
+Class: is a user defined blueprint or prototype from which objects are created. For example: We can think of class as a sketch (prototype) of a house. It contains all the details about the floors, doors, windows etc. Based on these descriptions we build the house. House is the object. Since, many houses can be made from the same description, we can create many objects from a class.
+Instantiation of object (creating an object): Instantiation is the creation of a new instance of a class and is part of object-oriented programming, which is when an object is an instance of a class. Think of the generic employee.
+Visibility (public / private / protected):
+* Private: Members can be accessible inside the class only.
+* Public: Members can be accessible anywhere in application, means there is no restriction. 
+* Protected: Members can be accessible inside the class and in inherited class.
+Member datas / methods: defined outside of any methods but inside the class and are used in different methods, called member variables or fields . Member variable, instance variable, and field are different words that mean the same thing. Field is the preferred term in Java. For example - class A contains data members - id, name and salary. When you call the System. out. println() method, for example, the system actually executes several statements in order to display a message on the console.
+Inheritance: a mechanism in which one object acquires all the properties and behaviors of a parent object. For example, a child inherits the traits of his/her parents. With inheritance, we can reuse the fields and methods of the existing class.
+Interface: an abstract type that is used to specify a behavior that classes must implement.
+For example:
+interface MyInterface{
+void print();
+}
+class Welcome1 implements MyInterface{
+public void print()
+{
+System.out.print("welcome to my java webpage");
+}
+public static void main (String args[]){
+Welcome1 obj=new Welcome1();
+obj.print();
+}
+}
+In the above example, the MyInterface is an interface has void print() method(only one) with no implementation. but its implementation provided in the welcome1 class.
+Polymorphism: the ability of an object to take on many forms. The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object. For example of polymorphism is how a parent class refers to a child class object. For instance, let's consider a class Animal and let Cat be a subclass of Animal. So, any cat is animal.
+Overriding: a feature that allows a subclass or child class to provide a specific implementation of a method that is already provided by one of its super-classes or parent classes. For example: We have two classes: A child class Boy and a parent class Human. The Boy class extends Human class. Both the classes have a common method void eat() . Boy class is giving its own implementation to the eat() method or in other words it is overriding the eat() method.
+Abstract classes: a class that is declared abstract —it may or may not include abstract methods.
+For example:
+abstract class Bike{  
+  abstract void run();  
+}  
+class Honda4 extends Bike{  
+void run(){System.out.println("running safely");}  
+public static void main(String args[]){  
+ Bike obj = new Honda4();  
+ obj.run();  
+}  
+}  
+In above example, Bike is an abstract class that contains only one abstract method run. Its implementation is provided by the Honda class.
+3.
+1. What programming languages you can use for Android app development?
+- Android apps can be written using Kotlin, Java, and C++ languages.
+2. What is .apk file?
+- An app created for Android, Google's mobile operating system
+3. How Android system runs apps?
+- Each process has its own virtual machine (VM), so an app's code runs in isolation from other apps.By default, every app runs in its own Linux process. The Android system starts the process when any of the app's components need to be executed, and then shuts down the process when it's no longer needed or when the system must recover memory for other apps.
+4. Name four types of Android components. Describe each.
+- Activities: the entry point for interacting with the user. It represents a single screen with a user interface.
+- Services: a general-purpose entry point for keeping an app running in the background for all kinds of reasons.
+- Broadcast receivers: a component that enables the system to deliver events to the app outside of a regular user flow, allowing the app to respond to system-wide broadcast announcements.
+- Content providers: manages access to a central repository of data
+5. What is manifest file and what is its purpose?
+- A manifest file is an XML document that describes the manifest, or package contents, of a Windows software application. The manifest file provides essential information about your app to the Android system, which the system must have before it can run any of the app's code.
+6. What are resources? Why they are needed?
+- An Android app is composed of more than just code—it requires resources that are separate from the source code, such as images, audio files, and anything relating to the visual presentation of the app. For example, you can define animations, menus, styles, colors, and the layout of activity user interfaces with XML files. Using app resources makes it easy to update various characteristics of your app without modifying code. Providing sets of alternative resources enables you to optimize your app for a variety of device configurations, such as different languages and screen sizes. Providing sets of alternative resources enables you to optimize your app for a variety of device configurations, such as different languages and screen sizes.
+

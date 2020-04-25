@@ -24,7 +24,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     RequestQueue queue = null;
@@ -45,11 +44,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }).start();
     };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         final String[] brand = new String[]{
                 "AAPL", "GOOGL", "FB", "NOK"
         };
@@ -61,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
             RequestQueue queue = Volley.newRequestQueue(this);
             final String id = brand[i];
             String url = "https://financialmodelingprep.com/api/company/price/" +id+ "?datatype=json";
+            Log.i("id",id);
 // Request a string response from the provided URL.
             JsonObjectRequest stringRequest = new JsonObjectRequest(Request.Method.GET, url, null,
                     new Response.Listener<JSONObject>() {
@@ -70,8 +68,9 @@ public class MainActivity extends AppCompatActivity {
                             try {
                                 JSONObject brand = response.getJSONObject(id);
                                 String price = brand.getString("price");
+                                Log.i("price", price);
                                 prices.add(price);
-                                showList();
+                                Log.i("hello", Integer.toString(prices.size()));
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
@@ -85,17 +84,17 @@ public class MainActivity extends AppCompatActivity {
             }
             );
             queue.add(stringRequest);
-
         }
+
     }
-    public void showList()
+    public void showList(View view)
     {
         for (int i=0;i<prices.size();i++)
         {
             String item = brands.get(i) + " :" + prices.get(i);
             list.add(item);
         }
-        ListView todoListView = findViewById(R.id.showList);
+        ListView todoListView = findViewById(R.id.branch);
         ArrayAdapter<String> todoAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, list);
 
